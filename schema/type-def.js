@@ -34,9 +34,19 @@ const typeDefs = gql`
     nationality: Nationality = BRAZIL  # Use the Nationality enum type here
   }
 
+  # OR
+
+  input UpdateUsernameInput{
+    id:ID!
+    name: String!
+  }
+
   type Mutation {
     createUser(input: CreateUserInput!): User
+    updateUserName(id: ID!, name: String! ): User
   }
+
+  
 
   enum Nationality {
     BRAZIL

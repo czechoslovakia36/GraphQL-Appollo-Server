@@ -39,6 +39,17 @@ const resolvers = {
             user.id= lastId+1
             UserList.push(user)
             return user
+        },
+        updateUserName: (parent,args)=>{
+            const id = args.id;
+            const newUsername= args.name;
+
+            const targetUser= UserList.filter((user) => user.id == id )[0]
+            targetUser.name = newUsername
+            
+
+            return targetUser
+            
         }
     }
 }
